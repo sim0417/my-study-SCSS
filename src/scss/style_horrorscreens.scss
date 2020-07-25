@@ -4,13 +4,14 @@ html,
 body {
     margin: 0;
     height: 100%;
+    display: flex;
 }
 
 header {
-    // TODO : change interactive width
-    width: 40%;
-
+    width: 35%;
+    min-width: 430px;
     height: 100%;
+
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -22,32 +23,35 @@ header {
         justify-content: center;
         flex-direction: column;
         padding: 72px;
-    }
 
-    div.page_title {
-        height: 30%;
+        &.page_title {
+            height: 30%;
 
-        h1 {
-            margin: 0;
-            line-height: 1;
-            font-size: 4.0rem;
-            font-weight: inherit;
-        }
-    }
+            h1 {
+                margin: 0;
+                line-height: 0.9;
 
-    div.page_subtitle {
-        height: 70%;
-
-        p {
-            margin-bottom: 2rem;
+                font: {
+                    size: 3.5rem;
+                    weight: inherit;
+                }
+            }
         }
 
-        p:nth-child(1) {
-            font-size: 24px;
-        }
+        &.page_subtitle {
+            height: 70%;
 
-        p:nth-child(2) {
-            font-size: 18px;
+            p {
+                margin-bottom: 2rem;
+            }
+
+            p:nth-child(1) {
+                font-size: 24px;
+            }
+
+            p:nth-child(2) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -55,7 +59,12 @@ header {
 
         a {
             box-shadow: $nav_a_shadow;
+            display: inline-block;
 
+            margin: {
+                right: 5px;
+                bottom: 10px;
+            }
 
             &:link,
             &:visited {
@@ -72,5 +81,35 @@ header {
 }
 
 main {
+    width: 65%;
     height: 100%;
+
+    section {
+        &.container_screens {
+            background-color: $container_screen_bg_color;
+
+            article {
+                padding: 36px;
+                color: white;
+
+                div {
+                    &.screen_title {}
+
+                    &.screen_content {
+
+                        img {
+                            width: 100%;
+
+                        }
+
+                    }
+
+                    &.screen_footer {}
+                }
+
+
+
+            }
+        }
+    }
 }
