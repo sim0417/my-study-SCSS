@@ -1,8 +1,29 @@
-$header_bg_color : #F0F0F0;
-$header_font_color : #E7473C;
+//define global values and mixin
 
-$nav_a_normal_color : rgba(0, 0, 0, .6);
-$nav_a_hover_color: black;
-$nav_a_shadow : 0 1px 0 #000;
+$device_type_desktop : "Desktop";
+$device_type_desktop_and_laptop : "DesktopAndLaptop";
 
-$container_screen_bg_color : #DD4439;
+$device_type_tablet_and_ipad : "TabletAndIpad";
+$device_type_tablet_and_ipad_l : "TabletAndIpadLandscape";
+
+$device_type_tablet_and_mobile : "TabletAndMobile";
+$device_type_tablet_and_mobile_l : "TabletAndMobileLandscape";
+
+$device_type_mobile_phone : "MobilePhone";
+
+
+@mixin mediaSizeForDevice($deviceType) {
+    $device_size_desktop: 1281px;
+
+    /*
+    Device = Desktop
+    Screen = 1281px to higher resolution desktops
+    */
+    @if $deviceType==$device_type_desktop {
+        @media screen and (min-width:$device_size_desktop) {
+            @content;
+        }
+    }
+
+    @else if $deviceType==$device_type_desktop_and_laptop {}
+}
