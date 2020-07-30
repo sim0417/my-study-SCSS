@@ -175,6 +175,10 @@ main {
                             &:hover {
                                 color: white;
                             }
+
+                            &:focus {
+                                outline: none;
+                            }
                         }
                     }
                 }
@@ -195,6 +199,10 @@ main {
             padding: 5px 10px;
             margin: 0 1rem;
             color: white;
+
+            &:focus {
+                outline: none;
+            }
 
             &.btn_youtube {
                 background-color: #e62117;
