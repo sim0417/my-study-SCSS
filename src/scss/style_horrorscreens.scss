@@ -89,7 +89,7 @@ main {
 
     padding-left: 430px;
 
-    @media screen and (min-width : 1245px) {
+    @media screen and (min-width: 1245px) {
         padding-left: 35%;
     }
 
@@ -112,17 +112,23 @@ main {
 
                         h2 {
                             position: relative;
-                            font-size: 1.5rem;
+                            font-size: 1.25rem;
 
                             a {
                                 opacity: 0;
                                 position: absolute;
                                 right: 100%;
-                                @include AniOpacity(0.2s, 0s);
+                                transition: opacity 0.2s 0s linear;
+                                margin-right: 5px;
+                                color: rgba(0, 0, 0, 0.521);
+
+                                &:hover {
+                                    opacity: 1;
+                                    color: rgba(0, 0, 0, 1);
+                                }
                             }
 
-                            &:hover>a,
-                            a:hover {
+                            &:hover > a {
                                 opacity: 1;
                             }
                         }
@@ -134,14 +140,18 @@ main {
                         justify-content: center;
                         align-items: center;
                         margin-bottom: 1.25rem;
-                        box-shadow: 0 40px 40px -40px #000, 0 0 12px rgba(0, 0, 0, .06), inset 0 0 0 1px rgba(0, 0, 0, .2);
+                        box-shadow: 0 40px 40px -40px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+                            inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 
                         img {
                             width: 100%;
+                            cursor: pointer;
                         }
 
                         .play_icon {
                             position: absolute;
+                            font-size: 2rem;
+                            cursor: pointer;
                         }
                     }
 
@@ -149,11 +159,55 @@ main {
                         display: flex;
                         justify-content: flex-end;
 
-                        &>span,
-                        &>button {
+                        span,
+                        button {
                             margin-left: 0.5rem;
                         }
+
+                        button {
+                            border: 0;
+                            background-color: transparent;
+                            color: #ffffff96;
+                            font-size: 1rem;
+
+                            transition: color 0.3s 0s linear;
+
+                            &:hover {
+                                color: white;
+                            }
+                        }
                     }
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        box-shadow: inset 0 5px 12px rgba(0, 0, 0, 0.3);
+        padding: 30px 36px;
+
+        button {
+            border-radius: 3px;
+            border: 0px;
+            padding: 5px 10px;
+            margin: 0 1rem;
+            color: white;
+
+            &.btn_youtube {
+                background-color: #e62117;
+                &:hover {
+                    background-color: #cc181e;
+                }
+            }
+
+            &.btn_twitter {
+                background-color: #1b95e0;
+
+                &:hover {
+                    background-color: #0c7abf;
                 }
             }
         }

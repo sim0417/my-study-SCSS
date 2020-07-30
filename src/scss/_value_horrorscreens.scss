@@ -1,16 +1,8 @@
-$header_bg_color : #F0F0F0;
-$header_font_color : #E7473C;
+$header_bg_color: #f0f0f0;
+$header_font_color: #e7473c;
 
-$nav_a_normal_color : rgba(0, 0, 0, .6);
+$nav_a_normal_color: rgba(0, 0, 0, 0.6);
 $nav_a_hover_color: black;
-$nav_a_shadow : 0 1px 0 #000;
+$nav_a_shadow: 0 1px 0 #000;
 
-$container_screen_bg_color : #DD4439;
-
-// make opacity animation
-@mixin AniOpacity($duration, $delayTime) {
-    transition-property: opacity;
-    transition-duration: $duration;
-    transition-delay: $delayTime;
-    transition-timing-function: linear;
-}
+$container_screen_bg_color: #dd4439;
