@@ -1,0 +1,52 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "0464d6f35a7fe587434173f42ddace88",
+      "css": "thumbs-up",
+      "code": 59393,
+      "src": "elusive"
+    },
+    {
+      "uid": "3849753858193b4d6e07afa834aff979",
+      "css": "thumbs-down",
+      "code": 59394,
+      "src": "elusive"
+    },
+    {
+      "uid": "20370af73ca90f73b4bda366d92303d9",
+      "css": "play",
+      "code": 59392,
+      "src": "elusive"
+    },
+    {
+      "uid": "3c4a596e8ee3584c4c9e7002371db19f",
+      "css": "link",
+      "code": 59395,
+      "src": "websymbols"
+    },
+    {
+      "uid": "47a1f80457068fbeab69fdb83d7d0817",
+      "css": "youtube-play",
+      "code": 61802,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "627abcdb627cb1789e009c08e2678ef9",
+      "css": "twitter",
+      "code": 61593,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "frauy9fser6zk9n5ih3rdpz7zzfjbrvu",
+      "css": "eye",
+      "code": 59396,
+      "src": "modernpics"
+    }
+  ]
+}
