@@ -70,7 +70,7 @@ const clean = () => del(["build", ".publish"]);
 
 const copyResourceFile = () => gulp.src(routes.res.src).pipe(gulp.dest(routes.res.dest));
 
-const ghDeploy = () => gulp.src("build/**/*").pipe(ghPages());
+const ghDeploy = () => gulp.src("./build/**/*").pipe(ghPages());
 
 const prepare = gulp.series([clean]);
 
