@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/sim0417/my-study-SCSS",
+  "homepage": "https://sim0417.github.io/my-study-SCSS",
   "author": "Eon-Jo",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +19,10 @@
     "gulp-image": "^6.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-webserver": "^0.9.1",
-    "node-sass": "^4.12.0"
+    "mozjpeg": "^7.0.0",
+    "node-sass": "^4.14.1",
+    "pngquant-bin": "^6.0.0",
+    "zopflipng-bin": "^6.0.1"
   },
   "scripts": {
     "dev": "gulp dev",
