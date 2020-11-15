@@ -78,8 +78,8 @@ const assets = gulp.series([img, html, styles, copyResourceFile]);
 
 const live = gulp.parallel([webserver, watch]);
 
-export const build = gulp.series([prepare, assets]);
-
 export const dev = gulp.series([prepare, assets, live]);
+
+export const build = gulp.series([prepare, assets]);
 
 export const deploy = gulp.series([build, ghDeploy, clean]);

@@ -2,8 +2,8 @@
   "name": "scss-masterclass",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/sim0417/my-study-SCSS",
-  "homepage": "https://sim0417.github.io/my-study-SCSS",
+  "repository": "https://github.com/sim0417/my-study-scss",
+  "homepage": "https://sim0417.github.io/my-study-scss",
   "author": "Eon-Jo",
   "license": "MIT",
   "dependencies": {
