@@ -6,6 +6,7 @@ import sass from "gulp-sass";
 import minify from "gulp-csso";
 import autoprefixer from "gulp-autoprefixer";
 import ws from "gulp-webserver";
+import ghPages from "gulp-gh-pages";
 
 sass.compiler = require("node-sass");
 
@@ -14,20 +15,20 @@ const routes = {
   html: {
     watch: "src/**/*.html",
     src: "src/**/*.html",
-    dest: "dist",
+    dest: "build",
   },
   css: {
     watch: "src/css/**/*.scss",
     src: "src/css/**/*.scss",
-    dest: "dist/css",
+    dest: "build/css",
   },
   image: {
     src: "src/images/**/*",
-    dest: "dist/images",
+    dest: "build/images",
   },
   res: {
     src: "src/res/**/*",
-    dest: "dist/res",
+    dest: "build/res",
   },
 };
 
@@ -58,16 +59,18 @@ const watch = () => {
 const img = () => gulp.src(routes.image.src).pipe(gulpImage()).pipe(gulp.dest(routes.image.dest));
 
 const webserver = () =>
-  gulp.src("dist").pipe(
+  gulp.src("build").pipe(
     ws({
       livereload: true,
       open: true,
     }),
   );
 
-const clean = () => del(["dist", ".publish"]);
+const clean = () => del(["build", ".publish"]);
 
 const copyResourceFile = () => gulp.src(routes.res.src).pipe(gulp.dest(routes.res.dest));
+
+const ghDeploy = () => gulp.src("build/**/*").pipe(ghPages());
 
 const prepare = gulp.series([clean]);
 
@@ -78,3 +81,5 @@ const live = gulp.parallel([webserver, watch]);
 export const build = gulp.series([prepare, assets]);
 
 export const dev = gulp.series([prepare, assets, live]);
+
+export const deploy = gulp.series([build, ghDeploy, clean]);
