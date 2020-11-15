@@ -1,0 +1,242 @@
+@import '../_values_global';
+@import '_values';
+
+html,
+body {
+    position: relative;
+    margin: 0;
+    height: 100%;
+    display: flex;
+
+    @include mediaSizeForDevice($device_type_tablet_and_mobile) {
+        flex-direction: column;
+    }
+}
+
+header {
+    width: 35%;
+    min-width: 430px;
+    height: 100%;
+    position: fixed;
+
+    @include mediaSizeForDevice($device_type_tablet_and_mobile) {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: $header_bg_color;
+    color: $header_font_color;
+
+    div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 72px;
+
+        &.page_title {
+            height: 30%;
+
+            h1 {
+                margin: 0;
+                line-height: 0.9;
+
+                font: {
+                    size: 3.5rem;
+                    weight: inherit;
+                }
+
+                @include mediaSizeForDevice($device_type_tablet_and_mobile) {
+                    font-size: 4.5rem;
+                }
+
+            }
+        }
+
+        &.page_subtitle {
+            height: 70%;
+
+            p {
+                margin-bottom: 2rem;
+            }
+
+            p:nth-child(1) {
+                font-size: 24px;
+            }
+
+            p:nth-child(2) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    nav {
+        a {
+            box-shadow: $nav_a_shadow;
+            display: inline-block;
+
+            margin: {
+                right: 5px;
+                bottom: 10px;
+            }
+
+            &:link,
+            &:visited {
+                text-decoration: none;
+                color: $nav_a_normal_color;
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: $nav_a_hover_color;
+            }
+        }
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding-left: 430px;
+
+    @media screen and (min-width: 1245px) {
+        padding-left: 35%;
+    }
+
+    @include mediaSizeForDevice($device_type_tablet_and_mobile) {
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    section {
+        &.container_screens {
+            background-color: $container_screen_bg_color;
+
+            article {
+                padding: 36px;
+                color: white;
+                background: linear-gradient(to bottom, #0000000f 3%, $container_screen_bg_color 35%);
+
+                div {
+                    &.screen_title {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        margin-bottom: 1rem;
+                        font-weight: inherit;
+
+                        h2 {
+                            position: relative;
+                            font-size: 1.25rem;
+
+                            a {
+                                opacity: 0;
+                                position: absolute;
+                                right: 100%;
+                                transition: opacity 0.2s 0s linear;
+                                margin-right: 5px;
+                                color: rgba(0, 0, 0, 0.521);
+
+                                &:hover {
+                                    opacity: 1;
+                                    color: rgba(0, 0, 0, 1);
+                                }
+                            }
+
+                            &:hover>a {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    &.screen_content {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 1.25rem;
+                        box-shadow: 0 40px 40px -40px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+                            inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+
+                        img {
+                            width: 100%;
+                            cursor: pointer;
+                        }
+
+                        .play_icon {
+                            position: absolute;
+                            font-size: 4rem;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &.screen_footer {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        span,
+                        button {
+                            margin-left: 0.5rem;
+                        }
+
+                        button {
+                            border: 0;
+                            background-color: transparent;
+                            color: #ffffff96;
+                            font-size: 1rem;
+
+                            transition: color 0.3s 0s linear;
+
+                            &:hover {
+                                color: white;
+                            }
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        box-shadow: inset 0 5px 12px rgba(0, 0, 0, 0.3);
+        padding: 30px 36px;
+
+        button {
+            border-radius: 3px;
+            border: 0px;
+            padding: 5px 10px;
+            margin: 0 1rem;
+            color: white;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.btn_youtube {
+                background-color: #e62117;
+
+                &:hover {
+                    background-color: #cc181e;
+                }
+            }
+
+            &.btn_twitter {
+                background-color: #1b95e0;
+
+                &:hover {
+                    background-color: #0c7abf;
+                }
+            }
+        }
+    }
+}
