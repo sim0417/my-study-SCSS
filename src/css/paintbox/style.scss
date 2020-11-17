@@ -1,0 +1,84 @@
+@import '../_values_global';
+@import '_values';
+
+html,
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+body{
+  color: $default-font-color;
+  font-weight: $default-font-weight;
+
+  & *{
+    box-sizing: border-box;
+  }
+}
+
+a{
+  cursor: pointer;
+  color: $default-font-color;
+  text-decoration: none;
+
+  &:hover{
+    color: $default-focus-font-color
+  }
+}
+
+header{
+  width: 100%;
+  padding: 20px 140px;
+  background-color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  
+  position: fixed;
+  top:0;
+
+  & > nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+
+    & > .column{
+      display: flex;
+      align-items: center;
+
+      &:nth-child(2){
+        justify-content: center;
+      }
+
+      &:last-child{
+        justify-content: flex-end;
+      }
+    }
+
+    & .logo{
+      width: 36px;
+      height: 36px;
+    }
+
+    & ul{
+      display: flex;
+      align-items: center;
+
+      & .icon-shop{
+        font-size: 1.25rem;
+      }
+
+      & li:not(:last-child){
+        margin-right: 45px;
+      }
+    } 
+  }
+}
+
+main{
+  padding: 0px 140px;
+  margin-top: 100px;
+}
+
+.page-main{
+
+}
