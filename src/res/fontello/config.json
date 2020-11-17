@@ -45,8 +45,14 @@
     {
       "uid": "frauy9fser6zk9n5ih3rdpz7zzfjbrvu",
       "css": "eye",
-      "code": 59396,
+      "code": 59146,
       "src": "modernpics"
+    },
+    {
+      "uid": "83a806d41893e8bc6fac601669c76cd2",
+      "css": "shop",
+      "code": 59445,
+      "src": "maki"
     }
   ]
 }
