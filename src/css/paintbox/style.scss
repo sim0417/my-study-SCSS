@@ -1,5 +1,4 @@
-@import '../_values_global';
-@import '_values';
+@import '../_values_global', '_values';
 
 html,
 body{
@@ -9,11 +8,16 @@ body{
 
 body{
   color: $default-font-color;
+  font-family: $main-font-family;
   font-weight: $default-font-weight;
 
   & *{
     box-sizing: border-box;
   }
+}
+
+em{
+  font-style: italic;
 }
 
 a{
@@ -29,12 +33,13 @@ a{
 header{
   width: 100%;
   padding: 20px 140px;
-  background-color: white;
-  font-size: 0.75rem;
-  text-transform: uppercase;
+  background-color: $light-color;
+
+  @include menuFontStyle;
   
   position: fixed;
   top:0;
+  z-index: 10;
 
   & > nav{
     width: 100%;
@@ -80,5 +85,113 @@ main{
 }
 
 .page-main{
-
+  height: 76vh;
+  margin-bottom: 82px;
 }
+
+.page-main__hero{
+  width: 100%;
+  height: 100%;
+  color:$light-color;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  & img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  & .page-main__hero_content{
+    width: 40%;
+    text-align: center;
+
+    & .title{
+      @include menuFontStyle;
+      margin-bottom: 40px;
+    }
+
+    & .subtitle{
+      font-size: $font-size-x-large;
+      margin-bottom: 40px;
+    }
+
+    & a{
+      @include linkButton;
+    }
+  }
+}
+
+.content_card{
+  width: 100%;
+  height: 68vh;
+  display: flex;
+
+  & .content_card__image{
+    width: 50%;
+    & img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  & .content_card__content{
+    width: 50%;
+    background-color: $primary-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & .title{
+      @include menuFontStyle;
+      margin-bottom: 35px;
+    }
+
+    & .subtitle{
+      width: 60%;
+      font-size: $font-size-large;
+      margin-bottom: 70px;
+    }
+
+    & .content_card__icon_btn{
+      display: flex;
+
+      & button,
+      & .arrow-icon-box{
+        @include linkButton;
+        color: $default-font-color;
+        border: 1px solid $default-font-color;
+      }
+
+      & > button{
+        padding-right: 100px;
+      }
+
+      & > .arrow-icon-box{
+        padding: 20px;
+      }
+
+      &:hover button,
+      &:hover .arrow-icon-box{
+        cursor: pointer;
+        background-color: $default-font-color;
+        color: $light-color;
+      }
+
+    }
+
+  }
+}
+

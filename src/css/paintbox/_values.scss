@@ -1,7 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400&family=Zilla+Slab:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+
+$main-font-family:'Zilla Slab', serif;
+$menu-title-font-family:'Almarai', sans-serif;
+
 $default-font-color:#414141;
 $default-focus-font-color:#d4d5dc;
-$default-font-weight: 500;
+$default-font-weight: 300;
+$font-weight-bold: 400;
+
+
+$font-size-large : 2.25rem;
+$font-size-x-large : 3.0rem;
 
 $primary-color:#f3ede8;
 $card-color-first : #dee8e9;
 $card-color-second : #f9dbbe;
+
+$light-color:white;
+
+
+@mixin menuFontStyle {
+  font-family: $menu-title-font-family;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+@mixin linkButton{
+
+  @include menuFontStyle;
+
+  padding: 20px 50px;
+  background-color:transparent;
+  color: $light-color;
+  border : 1px solid $light-color;
+  display: inline-block;
+  transition: color,background-color 0.3s ease-in-out;
+  
+  &:hover{
+    background-color: $light-color;
+    color: $default-font-color;
+  }
+}
