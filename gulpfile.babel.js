@@ -68,7 +68,7 @@ const webserver = () =>
 const watch = () => {
   gulp.watch(routes.css.watch, styles);
   gulp.watch(routes.html.watch, html);
-  gulp.watch(routes.img.watch, img);
+  gulp.watch(routes.image.watch, img);
   gulp.watch(routes.res.watch, copyResourceFile);
 };
 
