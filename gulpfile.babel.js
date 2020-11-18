@@ -23,10 +23,12 @@ const routes = {
     dest: "build/css",
   },
   image: {
+    watch: "src/images/**/*",
     src: "src/images/**/*",
     dest: "build/images",
   },
   res: {
+    watch: "src/res/**/*",
     src: "src/res/**/*",
     dest: "build/res",
   },
@@ -51,12 +53,9 @@ const styles = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes.css.dest));
 
-const watch = () => {
-  gulp.watch(routes.css.watch, styles);
-  gulp.watch(routes.html.watch, html);
-};
-
 const img = () => gulp.src(routes.image.src).pipe(gulpImage()).pipe(gulp.dest(routes.image.dest));
+
+const copyResourceFile = () => gulp.src(routes.res.src).pipe(gulp.dest(routes.res.dest));
 
 const webserver = () =>
   gulp.src("build").pipe(
@@ -66,9 +65,14 @@ const webserver = () =>
     }),
   );
 
-const clean = () => del(["build", ".publish"]);
+const watch = () => {
+  gulp.watch(routes.css.watch, styles);
+  gulp.watch(routes.html.watch, html);
+  gulp.watch(routes.img.watch, img);
+  gulp.watch(routes.res.watch, copyResourceFile);
+};
 
-const copyResourceFile = () => gulp.src(routes.res.src).pipe(gulp.dest(routes.res.dest));
+const clean = () => del(["build", ".publish"]);
 
 const ghDeploy = () => gulp.src("build/**/*").pipe(ghPages());
 
