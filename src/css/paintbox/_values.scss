@@ -5,18 +5,21 @@ $main-font-family:'Zilla Slab', serif;
 $menu-title-font-family:'Almarai', sans-serif;
 
 $default-font-color:#414141;
+$sub-font-color: #9d9d9c;
+
 $default-focus-font-color:#d4d5dc;
 $default-font-weight: 300;
-$font-weight-bold: 400;
+$font-weight-bold: 600;
 
-
+$font-size-small : 0.75rem;
+$font-size-medium : 1.75rem;
 $font-size-large : 2.25rem;
-$font-size-x-large : 3.0rem;
+$font-size-x-large : 2.75rem;
 
 $primary-color:#f3ede8;
-$card-color-first : #dee8e9;
-$card-color-second : #f9dbbe;
-
+$card-color-mint : #dee8e9;
+$card-color-apricot : #f9dbbe;
+$point-color: #cfa102;
 $light-color:white;
 
 
@@ -24,13 +27,14 @@ $light-color:white;
   font-family: $menu-title-font-family;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: $font-size-small;
 }
 
 @mixin linkButton{
 
   @include menuFontStyle;
-
+  
+  cursor: pointer;
   padding: 20px 50px;
   background-color:transparent;
   color: $light-color;
@@ -41,5 +45,16 @@ $light-color:white;
   &:hover{
     background-color: $light-color;
     color: $default-font-color;
+  }
+}
+
+@mixin linkButtonDark {
+  @include linkButton;
+  color: $default-font-color;
+  border: 1px solid $default-font-color;
+
+  &:hover{
+    background-color: $default-font-color;
+    color: $light-color;
   }
 }

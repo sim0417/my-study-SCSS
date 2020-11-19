@@ -2,7 +2,7 @@
 
 html,
 body{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -85,7 +85,7 @@ main{
 }
 
 .page-main{
-  height: 76vh;
+  height: 75vh;
   margin-bottom: 82px;
 }
 
@@ -133,7 +133,8 @@ main{
 
 .content_card{
   width: 100%;
-  height: 68vh;
+  height: 65vh;
+  margin-bottom: 82px;
   display: flex;
 
   & .content_card__image{
@@ -161,8 +162,12 @@ main{
 
     & .subtitle{
       width: 60%;
-      font-size: $font-size-large;
+      font-size: $font-size-medium;
       margin-bottom: 70px;
+    }
+
+    & > button{
+      @include linkButtonDark;
     }
 
     & .content_card__icon_btn{
@@ -170,9 +175,7 @@ main{
 
       & button,
       & .arrow-icon-box{
-        @include linkButton;
-        color: $default-font-color;
-        border: 1px solid $default-font-color;
+        @include linkButtonDark;
       }
 
       & > button{
@@ -185,13 +188,165 @@ main{
 
       &:hover button,
       &:hover .arrow-icon-box{
-        cursor: pointer;
         background-color: $default-font-color;
         color: $light-color;
       }
-
     }
-
   }
+
+  & .content_card--mint{
+    background-color: $card-color-mint;
+  }
+  & .content_card--apricot{
+    background-color: $card-color-apricot;
+  }
+
+
 }
 
+
+
+
+.newest_colors{
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 82px;
+
+  & .newest_colors__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > .title{
+      @include menuFontStyle;
+      margin-bottom: 25px;
+    }
+
+    & > .subtitle{
+      font-size: $font-size-large;
+      margin-bottom: 25px;
+    }
+
+    & .newest_colors__list{
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+
+      & .item{
+        width: 100%;
+        cursor: pointer;
+
+        & .product_image_container{
+          width: 100%;
+          height: 60%;
+
+          & .product_image{
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            & img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: opacity 0.3s ease-in-out;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+  
+            & > .product_color{
+              opacity: 0;
+            }
+  
+            &:hover > .product{
+              opacity: 0;
+            }
+            &:hover > .product_color{
+              opacity: 1;
+            }
+          }
+        }
+
+        &:first-child .product{
+          content: url("../../images/paintbox/power_couple_1.png");
+        }
+        &:first-child .product_color{
+          content: url("../../images/paintbox/power_couple_color_1.png");
+        }
+
+        &:nth-child(2) .product{
+          content: url("../../images/paintbox/power_couple_2.png");
+        }
+        &:nth-child(2) .product_color{
+          content: url("../../images/paintbox/power_couple_color_2.png");
+        }
+
+        &:last-child .product{
+          content: url("../../images/paintbox/power_couple_3.png");
+        }
+        &:last-child .product_color{
+          content: url("../../images/paintbox/power_couple_color_3.png");
+        }
+
+        & .title{
+          @include menuFontStyle;
+          margin-bottom: 12px;
+
+          & .new{
+            color: $point-color;
+          }
+        }
+
+        & .subtitle{
+          margin-bottom: 35px;
+
+          & .name{
+            font-size: $font-size-medium;
+            font-style: italic;
+            margin-bottom: 25px;
+          }
+
+          & .price{
+            @include menuFontStyle;
+            color: $sub-font-color;
+
+            & > a{
+              position: relative;
+              display: none;
+              color: $sub-font-color;
+              // border-bottom: 1px solid #9d9d9c;
+
+              &::after{
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: $sub-font-color;
+                position: absolute;
+                bottom:-3px;
+                left: 0;
+              }
+            }
+
+            &:hover span{
+              display: none;
+            }
+            &:hover a{
+              display: inline-block;
+            }
+          }
+        }
+
+
+        & > button{
+          @include linkButtonDark;
+
+        }
+
+      }
+    }
+  }
+}
