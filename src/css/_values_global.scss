@@ -5,9 +5,12 @@ $device_type_desktop_and_laptop : "DesktopAndLaptop";
 
 $device_type_tablet_and_ipad : "TabletAndIpad";
 $device_type_tablet_and_mobile : "TabletAndMobile";
-
 $device_type_mobile_phone : "MobilePhone";
 
+$device_type_smaller_laptop : "SmallerThenLaptop";
+$device_type_smaller_tablet : "SmallerTablet";
+$device_type_smaller_ipad : "SmallerIpad";
+$device_type_smaller_mobile : "SmallerMobile";
 
 @mixin mediaSizeForDevice($deviceType) {
 
@@ -23,7 +26,7 @@ $device_type_mobile_phone : "MobilePhone";
 
     /*
         Device = Laptops, Desktops
-        Screen = 1025px to 1280px
+        Screen = 1280px to 1025px 
     */
     @else if $deviceType==$device_type_desktop_and_laptop {
         @media screen and (min-width:1025px) and (max-width:1280px) {
@@ -33,7 +36,7 @@ $device_type_mobile_phone : "MobilePhone";
 
     /*
         Device = Tablets, Ipads,
-        Screen = 768px to 1024px
+        Screen = 1024px to 768px
     */
     @else if $deviceType==$device_type_tablet_and_ipad {
         @media screen and (min-width:768px) and (max-width:1024px) {
@@ -43,7 +46,7 @@ $device_type_mobile_phone : "MobilePhone";
 
     /*
         Device = Low Resolution Tablets, Mobiles
-        Screen = 481px to 767px
+        Screen = 767px to 481px
     */
     @else if $deviceType==$device_type_tablet_and_mobile {
         @media screen and (min-width:481px) and (max-width:767px) {
@@ -53,12 +56,49 @@ $device_type_mobile_phone : "MobilePhone";
 
     /*
         Device = Most of the Smartphones Mobiles
-        Screen = 320px to 479px
+        Screen = 479px to 320px 
     */
     @else if $deviceType==$device_type_mobile_phone {
         @media screen and (min-width:320px) and (max-width:479px) {
             @content;
         }
 
+    }
+
+    /*
+        Device = smaller than Laptops
+        Screen = min width 1280px
+    */
+    @else if $deviceType==$device_type_smaller_laptop {
+        @media screen and (max-width:1280px) {
+            @content;
+        }
+    }
+    /*
+        Device = smaller than Tablets
+        Screen = min width 1024px
+    */
+    @else if $deviceType==$device_type_smaller_tablet {
+        @media screen and (max-width:1024px) {
+            @content;
+        }
+    }
+    /*
+        Device = smaller than Ipads
+        Screen = min width 768px
+    */
+    @else if $deviceType==$device_type_smaller_ipad {
+        @media screen and (max-width:768px) {
+            @content;
+        }
+    }
+    /*
+        Device = smaller than Mobiles
+        Screen = min width 481px
+    */
+    @else if $deviceType==$device_type_smaller_mobile {
+        @media screen and (max-width:481px) {
+            @content;
+        }
     }
 }
