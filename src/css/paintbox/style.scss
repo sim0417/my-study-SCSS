@@ -41,11 +41,11 @@ input:focus{
 }
 
 header{
+  @include menuFontStyle;
+
   width: 100%;
   padding: 20px 140px;
   background-color: $light-color;
-
-  @include menuFontStyle;
   
   position: fixed;
   top:0;
@@ -85,58 +85,130 @@ header{
       & li:not(:last-child){
         margin-right: 45px;
       }
-    } 
+    }
+    
+    & .mobile-menu{
+      cursor: pointer;
+      display: none;
+      font-size: 1.25rem;
+    }
+  }
+
+  @include mediaSizeForDevice($device_type_desktop_and_laptop) {
+    padding: 20px 50px;
+  }
+  @include mediaSizeForDevice($device_type_smaller_tablet) {
+    padding: 10px 0px;
+
+    & > nav{
+      & > .column{
+        padding: 0px 10px;  
+      }
+      & ul{
+        display: none;
+      }
+      & .mobile-menu{
+        display: block;
+      }
+    }
   }
 }
 
 main{
   padding: 0px 140px;
   margin-top: 100px;
+
+  @include mediaSizeForDevice($device_type_desktop_and_laptop) {
+    padding: 0px 50px;
+  }
+  @include mediaSizeForDevice($device_type_smaller_tablet) {
+    margin-top: 60px;
+    padding: 0px;
+  }
 }
 
 .page-main{
   height: 75vh;
   margin-bottom: $default-article-margin-bottom;
-}
 
-.page-main__hero{
-  width: 100%;
-  height: 100%;
-  color:$light-color;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-
-  & img{
+  & .page-main__hero{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    color:$light-color;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    & .page-main__image{
+      & > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+
+    & .page-main__hero_content{
+      width: 40%;
+      text-align: center;
+
+      & .title{
+        @include menuFontStyle;
+        margin-bottom: 40px;
+      }
+
+      & .subtitle{
+        font-size: $font-size-x-large;
+        margin-bottom: 40px;
+      }
+
+      & a{
+        @include linkButton;
+      }
+    }
   }
 
-  & .page-main__hero_content{
-    width: 40%;
-    text-align: center;
-
-    & .title{
-      @include menuFontStyle;
-      margin-bottom: 40px;
+  @include mediaSizeForDevice($device_type_tablet_and_ipad) {
+    height: 62vh;
+    & .page-main__hero{
+      & .page-main__hero_content{
+        width: 60%;
+        & .subtitle{
+          font-size: $font-size-large;
+        }
+      }
     }
+  }
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    height: auto;
+    & .page-main__hero{
+      color:$default-font-color;
+      & .page-main__image{
+        & img{
+          max-height: 72vh;
+          object-fit: fill!important;
+          position: relative;
+          content: url("../../images/paintbox/main_image_m.jpg");
+        }
+      }
 
-    & .subtitle{
-      font-size: $font-size-x-large;
-      margin-bottom: 40px;
-    }
-
-    & a{
-      @include linkButton;
+      & .page-main__hero_content{
+        width: 70%;
+        margin-top: 40px;
+        & .subtitle{
+          font-size: $font-size-medium;
+        }
+        & a{
+          @include linkButtonDark;
+        }
+      }
     }
   }
 }
@@ -145,6 +217,7 @@ main{
   width: 100%;
   height: 65vh;
   margin-bottom: $default-article-margin-bottom;
+  background-color: $primary-color;
   display: flex;
 
   & .content_card__image{
@@ -158,7 +231,7 @@ main{
 
   & .content_card__content{
     width: 50%;
-    background-color: $primary-color;
+    
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -228,13 +301,31 @@ main{
     }
   }
 
-  & .content_card--mint{
-    background-color: $card-color-mint;
-  }
-  & .content_card--apricot{
-    background-color: $card-color-apricot;
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    height: auto;
+    flex-direction: column!important;
+
+    & .content_card__image{
+      width: 100%;
+      height: 70%;
+    }
+  
+    & .content_card__content{
+      width: 100%;
+      height: 30%;
+      padding: 40px 0px;
+    }
   }
 }
+
+.content_card--mint{
+  background-color: $card-color-mint;
+}
+
+.content_card--apricot{
+  background-color: $card-color-apricot;
+}
+
 
 .newest_colors{
   width: 100%;
@@ -279,7 +370,7 @@ main{
             & img{
               width: 100%;
               height: 100%;
-              object-fit: cover;
+              object-fit: none;
               transition: opacity 0.3s ease-in-out;
               position: absolute;
               top: 0;
@@ -373,6 +464,17 @@ main{
       }
     }
   }
+
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    & .newest_colors__container{
+      & .newest_colors__list{
+        grid-template-columns: repeat(1, 1fr);
+        & .item:nth-child(n+2){
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .inspiration{
@@ -429,6 +531,43 @@ main{
 
   & > button{
     @include linkButtonDark;
+  }
+
+  @include mediaSizeForDevice($device_type_tablet_and_ipad) {
+    & .inspiration__list{
+      & .item{
+        width: 15%;
+      }
+    }
+  }
+
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    height: auto;
+
+    & .inspiration__title{
+      & .subtitle{
+        font-size: $font-size-medium;
+      }
+    }
+
+    & .inspiration__list{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(2,1fr);
+      justify-items: center;
+      grid-gap: 10px;
+
+      & .item{
+        width: 100%;
+
+        & >img{
+          max-width: 70%;
+        }
+        &:not(:last-child){
+          border-right: none;
+        }
+      }
+    }
   }
 }
 
