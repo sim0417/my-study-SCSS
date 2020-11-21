@@ -1,6 +1,15 @@
 Font license info
 
 
+## Font Awesome
+
+   Copyright (C) 2016 by Dave Gandy
+
+   Author:    Dave Gandy
+   License:   SIL ()
+   Homepage:  http://fortawesome.github.com/Font-Awesome/
+
+
 ## MFG Labs
 
    Copyright (C) 2012 by Daniel Bruce
@@ -8,6 +17,15 @@ Font license info
    Author:    MFG Labs
    License:   SIL (http://scripts.sil.org/OFL)
    Homepage:  http://www.mfglabs.com/
+
+
+## Web Symbols
+
+   Copyright (c) 2011 by Just Be Nice studio. All rights reserved.
+
+   Author:    Just Be Nice studio
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.justbenicestudio.com/
 
 
 ## Modern Pictograms
@@ -28,15 +46,6 @@ Font license info
    Homepage:  http://aristeides.com/
 
 
-## Web Symbols
-
-   Copyright (c) 2011 by Just Be Nice studio. All rights reserved.
-
-   Author:    Just Be Nice studio
-   License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.justbenicestudio.com/
-
-
 ## Maki
 
    Copyright (C) Mapbox, LCC
@@ -44,14 +53,5 @@ Font license info
    Author:    Mapbox
    License:   BSD (https://github.com/mapbox/maki/blob/gh-pages/LICENSE.txt)
    Homepage:  http://mapbox.com/maki/
-
-
-## Font Awesome
-
-   Copyright (C) 2016 by Dave Gandy
-
-   Author:    Dave Gandy
-   License:   SIL ()
-   Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
