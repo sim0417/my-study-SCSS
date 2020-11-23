@@ -12,6 +12,11 @@ body {
     }
 }
 
+::selection {
+    background: #fff;
+    text-shadow: none;
+}
+
 header {
     width: 35%;
     min-width: 430px;
