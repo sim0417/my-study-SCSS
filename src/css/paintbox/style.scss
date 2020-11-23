@@ -195,7 +195,7 @@ main{
           max-height: 54vh;
           object-position: top;
           position: relative;
-          content: url("../../images/paintbox/main_image_m.jpg");
+          content: url('../../images/paintbox/main_image_m.jpg');
         }
       }
 
@@ -391,24 +391,24 @@ main{
         }
 
         &:first-child .product{
-          content: url("../../images/paintbox/power_couple_1.png");
+          content: url('../../images/paintbox/power_couple_1.png');
         }
         &:first-child .product_color{
-          content: url("../../images/paintbox/power_couple_color_1.png");
+          content: url('../../images/paintbox/power_couple_color_1.png');
         }
 
         &:nth-child(2) .product{
-          content: url("../../images/paintbox/power_couple_2.png");
+          content: url('../../images/paintbox/power_couple_2.png');
         }
         &:nth-child(2) .product_color{
-          content: url("../../images/paintbox/power_couple_color_2.png");
+          content: url('../../images/paintbox/power_couple_color_2.png');
         }
 
         &:last-child .product{
-          content: url("../../images/paintbox/power_couple_3.png");
+          content: url('../../images/paintbox/power_couple_3.png');
         }
         &:last-child .product_color{
-          content: url("../../images/paintbox/power_couple_color_3.png");
+          content: url('../../images/paintbox/power_couple_color_3.png');
         }
 
         & .title{
@@ -439,7 +439,7 @@ main{
               color: $sub-font-color;
 
               &::after{
-                content: "";
+                content: '';
                 width: 100%;
                 height: 1px;
                 background-color: $sub-font-color;
@@ -698,7 +698,7 @@ main{
     }
 
     &::after{
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
       background-color: #fff;
