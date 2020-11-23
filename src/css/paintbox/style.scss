@@ -192,15 +192,15 @@ main{
       color:$default-font-color;
       & .page-main__image{
         & img{
-          max-height: 72vh;
-          object-fit: fill!important;
+          max-height: 54vh;
+          object-position: top;
           position: relative;
           content: url("../../images/paintbox/main_image_m.jpg");
         }
       }
 
       & .page-main__hero_content{
-        width: 70%;
+        width: 90%;
         margin-top: 40px;
         & .subtitle{
           font-size: $font-size-medium;
@@ -251,7 +251,7 @@ main{
     }
 
     & .subtitle{
-      width: 60%;
+      width: 90%;
       font-size: $font-size-medium;
       margin-bottom: 70px;
     }
@@ -584,6 +584,19 @@ main{
       flex-direction: row-reverse;
     }
   }
+
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    & .content_card{
+      height: auto;
+
+      & .content_card__content{
+
+        & .subtitle{
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
 }
 
 .join-conversation{
@@ -625,6 +638,7 @@ main{
       }
 
       & > input{
+        max-width: 80%;
         font-family: $main-font-family;
         font-size: $font-size-large;
 
@@ -639,6 +653,26 @@ main{
         font-size: $font-size-normal;
         background-color: transparent;
         border:  1px solid $default-font-color;
+      }
+    }
+  }
+
+  @include mediaSizeForDevice($device_type_smaller_tablet) {
+    & .join-conversation__title{
+      width: 90%;
+      margin-bottom: 40px;
+
+      & .subtitle{
+        font-size: $font-size-medium;
+      }
+    }
+    
+    & .join-conversation__input{
+      width: 70%;
+      & .email-input-box{
+        & > input{
+          font-size: $font-size-medium;
+        }
       }
     }
   }
@@ -682,6 +716,12 @@ main{
 
   }
 
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    grid-template-columns: repeat(2, 1fr);
+    & .gallery__image:nth-child(n+5){
+      display: none;
+    }
+  }
 }
 
 .follow-instagram{
@@ -729,4 +769,32 @@ footer{
     border-right: 1px solid $default-font-color;
   }
 
+  @include mediaSizeForDevice($device_type_smaller_ipad) {
+    padding: 35px 40px;
+    flex-direction: column;
+
+    & .column{
+      width: 100%;
+    }
+
+    & .column:first-child{
+      order:2;
+    }
+
+    & .column:nth-child(2){
+      order:1;
+    }
+
+    & .column:last-child{
+      order:3;
+    }
+
+    & .column:not(:last-child){
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-right: none;
+      border-bottom: 1px solid $default-font-color;
+    }
+
+  }
 }
