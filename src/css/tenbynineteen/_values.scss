@@ -1,0 +1,94 @@
+$primary-color: #af7832;
+$light-color:#ffffff;
+$default-font-weight: 500;
+$default-font-size:1.25rem;
+
+$slid-type-top:"top";
+$slid-type-bottom:"bottom";
+$slid-type-left:"left";
+$slid-type-right:"right";
+
+
+@mixin marqueeAnimation{
+ animation: 30s marquee linear infinite;
+}
+
+@keyframes marquee {
+  0%{
+    transform: translateX(50%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+@mixin slidAnimation($type, $delay:0s) {
+  @if $type == $slid-type-top{
+    animation-name: slidTop,fadeIn;
+  }
+  @else if $type==$slid-type-bottom {
+    animation-name: slidBottom,fadeIn;
+  }
+  @else if $type==$slid-type-left {
+    animation-name: slidLeft,fadeIn;
+  }
+  @else if $type==$slid-type-right {
+    animation-name: slidRight,fadeIn;
+  }
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  animation-delay: $delay;
+}
+
+@keyframes slidTop {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slidBottom {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slidLeft {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slidRight {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@mixin fadeInAnimation($delay:0s) {
+  opacity: 0;
+  animation: 0.5s fadeIn linear forwards;
+  animation-delay: $delay;
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
