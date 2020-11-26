@@ -27,6 +27,7 @@ main{
 
   @include mediaSizeForDevice($device_type_smaller_tablet) {
     grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -75,6 +76,7 @@ main{
   }
   @include mediaSizeForDevice($device_type_smaller_ipad) {
     grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 100%;
   }
 }
 
