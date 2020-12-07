@@ -22,7 +22,7 @@ header{
 
   ul{
     cursor: pointer;
-    padding: 15px 12px;
+    padding: 10px 12px;
     display: flex;
 
     li{
@@ -37,7 +37,7 @@ header{
       &.language{
         width: 100%;
         margin-right: 0px;
-        font-size: $font-size-small;
+        font-size: $default-font-size;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
@@ -54,6 +54,54 @@ header{
         color: $color-white;
       }
     }
+  }
 
+  @include mediaSizeForMobile(){
+    grid-template-columns: 50% 50%;
+
+    ul{
+      li{
+        font-size: $font-size-medium;
+        font-weight: $default-font-weight;
+      }
+
+      &:first-child{
+        & li:not(:first-child){
+          display: none;
+        }
+      }
+      &:last-child{
+        & li:first-child{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+section{
+  display: grid;
+  grid-template-columns: 33.33333% 33.33333% 33.33333%;
+
+  @include mediaSizeForMobile(){
+    grid-template-columns: 50% 50%;
+  }
+}
+
+article{
+  width: 100%;
+  cursor: pointer;
+
+  & > img{
+    width: 100%;
+  }
+
+  & > div{
+    padding: 5px 12px;
+    font-size: $font-size-small;
+    text-transform: uppercase;
+
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
