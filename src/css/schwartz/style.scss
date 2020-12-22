@@ -26,6 +26,10 @@ a{
   cursor: pointer;
 }
 
+em{
+  font-style: italic;
+}
+
 header{
   width: 100%;
   height: $header-size;
@@ -48,11 +52,15 @@ header{
     & .icon-menu{
       font-size: $font-size-medium;
       margin-right: 70px;
+
+      cursor: pointer;
     }
 
     &__logo{
       font-size: $font-size-large;
       font-weight: $font-weight-dark;
+
+      cursor: pointer;
     }
   }
 }
@@ -69,6 +77,47 @@ main{
   & section{
     width: 100%;
     max-width: 65rem;
+  }
+}
+
+footer{
+  padding: 35px 65px;
+  color: $light-color;
+  background-color: $gray-color;
+
+  display: flex;
+  justify-content: space-between;
+
+  & .footer-company{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    &__logo{
+      font-size: $font-size-large;
+      font-weight: $font-weight-dark;
+      margin-bottom: 100px;
+    }
+
+    &__content{
+      & div:not(:last-child){
+        margin-bottom: 10px;
+      }
+
+      &:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  & .footer-links{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    & a{
+      color: $light-color;
+    }
   }
 }
 
@@ -153,18 +202,68 @@ main{
     &__title{
       font-size: $font-size-medium;
       font-weight: $font-weight-bold;
-      margin-bottom: 50px;
+      margin-bottom: 35px;
     }
 
     &__text{
       font-size: $font-size-x-large;
       line-height: 40px;
-      margin-bottom: 50px;
+      margin-bottom: 35px;
+    }
+
+    &__text--small{
+      font-size: $font-size-medium;
+      margin-top: 20px;
+      margin-bottom: 35px;
     }
 
     &__img{
       width: 100%;
     }
+
+    &__img--fixed{
+      width: 100%;
+      height: 325px;
+    }
+
+    &__linked-img{
+      height: 325px;
+      background-color: $default-font-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      & img{
+        max-width: 230px;
+        max-height: 280px;
+        filter: invert(1);
+      }
+    }
+
+    &__buttons{
+      & .content__button:not(:last-child){
+        margin-right: 5px;
+      }
+    }
+
+    &__button{
+      padding: 8px 30px;
+      background-color: $light-color;
+      font-size: $font-size-normal;
+      font-weight: $default-font-weight;
+      border: 1px solid $border-color;
+      border-radius: 32px;
+
+      transition: background-color, color 0.3s;
+      cursor: pointer;
+
+      &:hover{
+        color: $light-color;
+        background-color: $default-font-color;
+      }
+
+    }
+
 
     &__column{
       flex:1;
