@@ -102,3 +102,9 @@ $device_type_smaller_mobile : "SmallerMobile";
         }
     }
 }
+
+@mixin mediaSize($size) {
+    @media screen and (max-width:$size){
+        @content;
+    }
+}
